@@ -23,6 +23,7 @@ export default create(subscribeWithSelector((set) => ({
 
   restart: () => {
     set((state) => {
+      // eslint-disable-next-line no-return-assign
       if (state.phase === 'playing' || state.phase === 'ended') return { phase: 'ready', blocksSeed: state.blocksSeed = Math.random() };
 
       return {};
